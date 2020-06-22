@@ -3,9 +3,20 @@ let video;
 let vScale = 16;
 let particles = []; //empty array to hold particles
 let sourceText = "I C U...curve2020";
+let button;
 
 function setup() {
+	// mimics the autoplay policy
+	getAudioContext().suspend();
+
 	createCanvas(windowWidth, windowHeight);
+	button = createButton('i c u curve2020 start');
+	button.mouseClicked(startButton);
+	// button.id('startButton');
+	button.size(600, 100);
+	button.position(width / 2, height / 2, 140, 40);
+	button.style("font-family", "Times");
+	button.style("font-size", "48px");
 	frameRate(15);
 	pixelDensity(1);
 	video = createCapture(VIDEO);
@@ -33,3 +44,12 @@ function draw() {
 	}
 
 }
+
+function startButton() {
+	userStartAudio();
+	button.hide();
+
+}
+// function moveButton() {
+// 	button.position(random(width), random(height));
+// }

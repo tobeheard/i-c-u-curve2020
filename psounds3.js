@@ -94,10 +94,13 @@ pattern4 = new Tone.Pattern(function (time, note) {
 // pattern1.loop = "8n";
 // pattern2.interval = "16n";
 
-
+StartAudioContext(Tone.context, 'startButton').then(function () {
+  //started
+})
 
 Tone.Transport.start();
-pattern4.start(0)
+
+pattern4.start(0);
 pattern1.start(8); //synth 1
 pattern2.start(24);
 pattern3.start(32).iterations = 6; //pluckdrops
