@@ -10,13 +10,13 @@ function setup() {
 	getAudioContext().suspend();
 
 	createCanvas(windowWidth, windowHeight);
-	button = createButton('i c u curve2020 start');
+	button = createButton('this is the start button');
 	button.mouseClicked(startButton);
 	// button.id('startButton');
 	button.size(600, 100);
-	button.position(width / 2, height / 2, 140, 40);
+	button.position((width / 2) - 200, (height / 2) - 30, 140, 40);
 	button.style("font-family", "Times");
-	button.style("font-size", "48px");
+	button.style("font-size", "28px");
 	frameRate(15);
 	pixelDensity(1);
 	video = createCapture(VIDEO);
