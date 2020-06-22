@@ -10,13 +10,13 @@ function setup() {
 	getAudioContext().suspend();
 
 	createCanvas(windowWidth, windowHeight);
-	button = createButton('this is the start button');
-	button.mouseClicked(startButton);
-	// button.id('startButton');
-	button.size(600, 100);
-	button.position((width / 2) - 200, (height / 2) - 30, 140, 40);
-	button.style("font-family", "Times");
-	button.style("font-size", "28px");
+	// button = createButton('this is the start button');
+	// button.mouseClicked(startButton);
+	// // button.id('startButton');
+	// button.size(600, 100);
+	// button.position((width / 2) - 200, (height / 2) - 30, 140, 40);
+	// button.style("font-family", "Times");
+	// button.style("font-size", "28px");
 	frameRate(15);
 	pixelDensity(1);
 	video = createCapture(VIDEO);
@@ -45,11 +45,11 @@ function draw() {
 
 }
 
-function startButton() {
-	userStartAudio();
-	button.hide();
+// function startButton() {
+// 	userStartAudio();
+// 	button.hide();
 
-}
+// }
 // function moveButton() {
 // 	button.position(random(width), random(height));
 // }
