@@ -24,7 +24,7 @@ function preload() {
 
 function setup() {
 
-  canvas = createCanvas(600, 400); //testsize
+  canvas = createCanvas(windowWidth, windowHeight); //fullsize
 
   for (let i = 0; i < 10; i++) {
     let x = random(width);
@@ -148,40 +148,40 @@ class Bubble {
   }
 
 
-intersects(other) {
-  let d = dist(this.x, this.y, other.x, other.y);
-  return (d < this.r + other.r);
-  // if (d < this.r + other.r) {
-  //   return true;
-  // } else {
-  //   return false;
-  // }
-}
-changeColor(bright) {
-  this.brightness = bright;
-}
-
-move() {
-  this.x = this.x + this.xspeed; //random(-5,5);   //define the move functionallity
-  this.y = this.y - random(-5, 5); //this.yspeed; //
-}
-
-show() { //define the show functionallity
-  stroke(0);
-  strokeWeight(2);
-  fill(this.brightness, 125);
-  // fill(random(0,155), random(0,155), 155);
-  ellipse(this.x, this.y, this.r * 2);
-}
-
-edge() {
-  if (this.x > 600 || this.x < 0) {
-    this.xspeed = -this.xspeed;
-    this.hum.freq(random(120, 880)); //changes tone when hits edge
+  intersects(other) {
+    let d = dist(this.x, this.y, other.x, other.y);
+    return (d < this.r + other.r);
+    // if (d < this.r + other.r) {
+    //   return true;
+    // } else {
+    //   return false;
+    // }
   }
-  if (this.y > 400 || this.y < 0) {
-    this.yspeed = -this.yspeed;
-    this.hum.freq(random(120, 220)); //changes tone when hits edge
+  changeColor(bright) {
+    this.brightness = bright;
   }
-}
+
+  move() {
+    this.x = this.x + this.xspeed; //random(-5,5);   //define the move functionallity
+    this.y = this.y - random(-5, 5); //this.yspeed; //
+  }
+
+  show() { //define the show functionallity
+    stroke(0);
+    strokeWeight(2);
+    fill(this.brightness, 125);
+    // fill(random(0,155), random(0,155), 155);
+    ellipse(this.x, this.y, this.r * 2);
+  }
+
+  edge() {
+    if (this.x > 600 || this.x < 0) {
+      this.xspeed = -this.xspeed;
+      this.hum.freq(random(120, 880)); //changes tone when hits edge
+    }
+    if (this.y > 400 || this.y < 0) {
+      this.yspeed = -this.yspeed;
+      this.hum.freq(random(120, 220)); //changes tone when hits edge
+    }
+  }
 }

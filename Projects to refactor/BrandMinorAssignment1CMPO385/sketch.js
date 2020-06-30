@@ -2,23 +2,23 @@
 //I thought. Associate the different amplitude to idividual shape.
 // click and drag shape around. Along with many other ambitious things!
 
-var soundCirc;
-var soundTri;
+let soundCirc;
+let soundTri;
 
-var button;
-var ellipseX;
-var backCol = 150;
+let button;
+let ellipseX;
+let backCol = 150;
 
-var playbackrate = 0;
-var buttonStateCirc = true;
-var buttonStateTri = true;
+let playbackrate = 0;
+let buttonStateCirc = true;
+let buttonStateTri = true;
 
-function preload(){
-  soundFormats('wav','mp3','ogg');
+function preload() {
+  soundFormats('wav', 'mp3', 'ogg');
 
   //load our sounds
-  soundCirc = loadSound('/assets/roland.mp3');
-  soundTri = loadSound('/assets/typebell1.mp3');
+  soundCirc = loadSound('assets/roland.mp3');
+  soundTri = loadSound('assets/typebell1.mp3');
 }
 
 function setup() {
@@ -27,15 +27,15 @@ function setup() {
 
 
   button = createButton("Circle");
-	button.position(width*0.05, 10);
-	button.mousePressed(playStopCircle);
+  button.position(width * 0.05, 10);
+  button.mousePressed(playStopCircle);
 
   button = createButton("Triangle");
-	button.position(width*0.9, 10);
-	button.mousePressed(playStopTriangle);
+  button.position(width * 0.9, 10);
+  button.mousePressed(playStopTriangle);
 
   checkbox = createCheckbox('Loop', false);
-  checkbox.position(width/2,30);
+  checkbox.position(width / 2, 30);
   checkbox.changed(loopCheckbox);
 
 
@@ -48,44 +48,44 @@ function draw() {
 
 
   stroke(0);
-  //var r = 0;
-  //var b = 255;
-  var level = amplitude.getLevel();
-  var barWidth = map(level,0,1,0,2000);
+  //let r = 0;
+  //let b = 255;
+  let level = amplitude.getLevel();
+  let barWidth = map(level, 0, 1, 0, 2000);
   //r = map(mouseY,600,0,0,255); //when mouse is up top red.
   //b = map(mouseY,600,0,255,0); //when mouse is bottom blue.
   //background(r,0,b);
-  fill(200,200,200);
-  ellipse(width*0.2,height*0.5,barWidth,60);
-  triangle(width*0.7,height*0.4,width*0.8+barWidth,height*0.55,width*0.6-barWidth,height*0.55);
+  fill(200, 200, 200);
+  ellipse(width * 0.2, height * 0.5, barWidth, 60);
+  triangle(width * 0.7, height * 0.4, width * 0.8 + barWidth, height * 0.55, width * 0.6 - barWidth, height * 0.55);
 
 
 }
 
-  function mousePressed(){
-    background(150);
-  }
+function mousePressed() {
+  background(150);
+}
 
-function playStopCircle(){
+function playStopCircle() {
   buttonStateCirc = !buttonStateCirc;
 
-  if(buttonStateCirc == true){
+  if (buttonStateCirc == true) {
     soundCirc.stop();
-  }
-  else{
+  } else {
     soundCirc.play();
   }
 }
-function playStopTriangle(){
+
+function playStopTriangle() {
   buttonStateTri = !buttonStateTri;
 
-  if(buttonStateTri == true){
+  if (buttonStateTri == true) {
     soundTri.stop();
-  }
-  else{
+  } else {
     soundTri.play();
   }
 }
+
 function loopCheckbox() {
   if (this.checked()) {
     soundCirc.setLoop(true) || soundTri.setLoop(true);
