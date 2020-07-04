@@ -101,26 +101,26 @@ StartAudioContext(Tone.context, 'startButton').then(function () {
 Tone.Transport.start();
 
 pattern4.start(0);
-pattern1.start(8); //synth 1
-pattern2.start(24);
-pattern3.start(32).iterations = 6; //pluckdrops
-pattern0.start(56); //subline
+pattern1.start(8); //synth 1 bellish
+pattern2.start(24); //synth 2 stringwalk
+pattern3.start(32).iterations = 6; //synth 3 pluckdrops
+pattern0.start(56); //synth 0 subline
 pattern3.stop(72);
 pattern1.stop(80);
 pattern3.start(86);
 pattern2.stop(124);
 pattern1.start(128);
-pattern3.start(132);
-pattern0.start(156);
-pattern2.start(184);
+pattern3.stop(136);
+pattern0.stop(156);
+pattern2.start(180);
 pattern2.stop(224);
-pattern3.stop(239);
+pattern3.start(239);
 pattern1.stop(248);
-pattern0.start(256);
-pattern1.start(288);
-pattern2.start(324);
-pattern3.start(432);
-pattern3.stop(572);
+pattern0.start(360);
+pattern1.start(540);
+pattern2.start(336);
+pattern3.stop(432);
+pattern3.start(572);
 pattern4.start(686);
-pattern0.stop(715);
+pattern0.stop(680);
 Tone.Transport.stop(720); //=12minutes
