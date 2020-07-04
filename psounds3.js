@@ -107,20 +107,30 @@ pattern3.start(32).iterations = 6; //synth 3 pluckdrops
 pattern0.start(56); //synth 0 subline
 pattern3.stop(72);
 pattern1.stop(80);
-pattern3.start(86);
-pattern2.stop(124);
+pattern3.start(86); //synth 3 pluckdrops
+pattern2.stop(124); //synth 2 stringwalk
 pattern1.start(128);
 pattern3.stop(136);
 pattern0.stop(156);
 pattern2.start(180);
 pattern2.stop(224);
-pattern3.start(239);
+pattern3.start(239); //synth 3 pluckdrops
 pattern1.stop(248);
-pattern0.start(360);
-pattern1.start(540);
+pattern3.start(256); //synth 3 pluckdrops
+pattern0.start(260); //synth 0 subline
+pattern3.start(280);
+pattern1.start(328); //synth 1 bellish
 pattern2.start(336);
-pattern3.stop(432);
+pattern0.stop(360);
+pattern0.start(392);
+pattern3.start(432);
+pattern1.start(540);
+pattern3.start(568);
 pattern3.start(572);
-pattern4.start(686);
+pattern3.start(628);
 pattern0.stop(680);
+pattern3.start(696);
+pattern3.start(704);
+pattern2.stop(708);
+pattern3.start(712);
 Tone.Transport.stop(720); //=12minutes
